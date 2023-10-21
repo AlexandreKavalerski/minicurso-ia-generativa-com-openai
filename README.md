@@ -9,7 +9,8 @@ O projeto utiliza as seguintes tecnologias:
 
 - **Python**: Python é a linguagem de programação que vamos utilizar para escrever nossos códigos. Você pode instalar o Python a partir do [site oficial](https://www.python.org/downloads/).
 
-- **API da OpenAI**: A OpenAI é uma empresa focada em pesquisa e desenvolvimento de IA. Vamos utilizar algumas soluções da API que dá acesso aos modelos de linguagem natural. Para utilizar a API, você deve gerar uma chave de API acessando o [link aqui](https://platform.openai.com/account/api-keys).
+- **API da OpenAI**: A OpenAI é uma empresa focada em pesquisa e desenvolvimento de IA. Vamos utilizar algumas soluções da API que dá acesso aos modelos de linguagem natural. Para utilizar a API, você deve gerar uma chave de API acessando o [link aqui](https://platform.openai.com/account/api-keys). 
+> Nesse projeto estamos utilizando a versão beta da lib Python que "encapsula" algumas chamadas à API. Para mais detalhes, veja o [repositório da lib](https://github.com/openai/openai-python).
 
 - **FastAPI**: FastAPI é um framework em Python para construir aplicações RESTful de forma rápida e seguindo os padrões modernos de desenvolvimento. Vamos usar FastAPI para construir uma API REST com as funcionalidades que iremos desenvolver.
 

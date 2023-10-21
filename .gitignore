@@ -1,0 +1,28 @@
+# General Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+dist/
+build/
+*.egg-info/
+*.egg
+*.env
+
+# Virtual Environment
+venv/
+env/
+.venv/
+.env/
+
+# VSCode
+.vscode/
+.settings/
+*.code-workspace
+*.code-workspace
+.settings/
+
+# FastAPI
+__pycache__/
+
