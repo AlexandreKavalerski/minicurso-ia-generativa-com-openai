@@ -44,7 +44,11 @@ OPENAI_API_KEY=SUA_CHAVE_DE_API_AQUI
 ```
 5. Inicie o servidor FastAPI:
 ```bash
-uvicorn main:app --reload
+uvicorn api.main:app --reload
+
+ou 
+
+make up
 ```
 
 6. Acesse a documentação da API em http://localhost:8000/docs para começar a interagir com as funcionalidades desenvolvidas.
