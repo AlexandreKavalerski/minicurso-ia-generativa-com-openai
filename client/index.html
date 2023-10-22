@@ -46,7 +46,7 @@
         <h2>Traduzir Códigos 🌐</h2>
         <div class="row">
           <div class="col">
-            <select id="source-language" class="form-control">
+            <select id="linguagem-origem" class="form-control">
               <option value="python">Python</option>
               <option value="java">Java</option>
               <option value="go">Go</option>
@@ -60,7 +60,7 @@
             </select>
           </div>
           <div class="col">
-            <select id="target-language" class="form-control">
+            <select id="linguagem-alvo" class="form-control">
               <option value="python">Python</option>
               <option value="java">Java</option>
               <option value="go">Go</option>
@@ -75,7 +75,7 @@
           </div>
         </div>
         <textarea
-          id="code-input"
+          id="input-codigo"
           class="form-control"
           placeholder="Insira seu código aqui"
         ></textarea>
@@ -113,7 +113,9 @@
         <div id="creation-result" class="mt-3">
           <p>Resultado:</p>
           <div id="result-placeholder" class="alert alert-info">
-            Aqui aparecerá o resultado da criação do programa.
+            <pre>
+              Aqui aparecerá o resultado da criação do programa.
+            </pre>
           </div>
         </div>
       </div>

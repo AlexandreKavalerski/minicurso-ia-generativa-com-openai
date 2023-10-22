@@ -15,11 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const translateButton = document.getElementById("translate-button");
-  const translationResult = document.getElementById("result-placeholder");
 
   translateButton.addEventListener("click", function () {
-    // Aqui você pode adicionar a lógica de tradução usando APIs ou JavaScript
-    translationResult.textContent = "Tradução de exemplo aqui.";
+    traduzirCodigo();
   });
 
   const createButton = document.getElementById("create-button");
@@ -30,3 +28,58 @@ document.addEventListener("DOMContentLoaded", function () {
     creationResult.textContent = "Programa criado com sucesso!";
   });
 });
+
+function get_linguagem_origem() {
+  return document.querySelector("#linguagem-origem").value;
+}
+
+function get_linguagem_alvo() {
+  return document.querySelector("#linguagem-alvo").value;
+}
+
+function get_codigo() {
+  return document.querySelector("#input-codigo").value;
+}
+
+async function traduzirCodigo() {
+  // Replace these functions with your actual data retrieval logic
+  const linguagemOrigem = get_linguagem_origem();
+  const linguagemAlvo = get_linguagem_alvo();
+  const codigo = get_codigo();
+
+  // Create the request body as a JavaScript object
+  const data = {
+    linguagem_origem: linguagemOrigem,
+    linguagem_destino: linguagemAlvo,
+    trecho_de_codigo: codigo,
+  };
+
+  // Convert the data object to a JSON string
+  const jsonBody = JSON.stringify(data);
+
+  try {
+    const headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    };
+    const url = "http://localhost:8000/traducao";
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: jsonBody,
+    });
+
+    if (response.ok) {
+      const resultado = await response.json();
+      console.log("Success:", resultado);
+
+      const translationResult = document.getElementById("result-placeholder");
+      translationResult.textContent = resultado;
+    } else {
+      console.error("Error:", response.statusText);
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+}

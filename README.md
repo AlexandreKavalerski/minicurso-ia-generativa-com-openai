@@ -48,10 +48,15 @@ uvicorn api.main:app --reload
 
 ou 
 
-make up
+make up_api
 ```
 
-6. Acesse a documentação da API em http://localhost:8000/docs para começar a interagir com as funcionalidades desenvolvidas.
+6. Inicie o servidor do Client:
+```bash
+make up_client
+```
+
+7. Acesse o cliente em http://localhost:8080 e a documentação da API em http://localhost:8000/docs para começar a interagir com as funcionalidades desenvolvidas.
 
 ## Contribuições
 Fique à vontade para contribuir com este projeto abrindo issues, propondo melhorias ou enviando pull requests. Sua colaboração é bem-vinda!
