@@ -42,7 +42,50 @@ def rude():
         print(saida)
 
 
+def transcribe(file_path: str):
+    import whisper
+
+    whisper_model = whisper.load_model("small")
+    # model = whisper.load_model("small", fp16=False, language="portuguese")
+
+    result = whisper_model.transcribe(
+        file_path,
+    )
+    content = result.get("text")
+    print(content)
+
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {
+                "role": "system",
+                "content": "Você é um assistente tradutor especialista em síntese de conteúdos técnicos em computação",
+            },
+            {
+                "role": "user",
+                "content": f"Resuma do que se trata esse conteúdo: {content}",
+            },
+        ],
+    )
+    print(completion.choices[0].message.content)
+
+
+def to_image(prompt="a white siamese cat"):
+    from io import BytesIO
+    from PIL import Image
+    import requests
+
+    response = client.images.generate(prompt=prompt)
+
+    img_from_url = requests.get(response.data[0].url)
+
+    image = Image.open(BytesIO(img_from_url.content))
+    image.save("result.png")
+
+
 if __name__ == "__main__":
     print("em execução...")
     # poema()
     # rude()
+    # to_image()
+    # transcribe("files/v2.mp4")
